@@ -1,0 +1,28 @@
+.outside{
+
+    padding: 40px;
+}
+
+.name{
+
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+.inputclass{
+
+    width:575px;
+    border-radius: 25px;
+    height: 40px;
+
+    border: solid 1px rgba(0, 0, 0, 0.2);
+}
+.startButton{
+    width: 136px;
+    height: 40px;
+    background-color: #5056ED;
+    color: white;
+    border-radius: 57px;
+    border: none;
+}

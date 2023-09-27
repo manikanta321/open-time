@@ -1,0 +1,96 @@
+<header class="header">
+    <div class="row">
+
+        <div class="col-10">
+            <img class="logo" src="../../../assets/img/Logo (1).svg">
+
+        </div>
+
+
+        <div class="col-2">
+
+            <p>Total Time Spend <span>1hr</span></p>
+
+        </div>
+    </div>
+
+</header>
+<div class="maindiv ">
+
+
+    <div class="card" *ngFor="let data of mainObject let i=index">
+        <br>
+        <div class="row headingCard">
+            <div class="col-6">
+                <p class="nameOfTask">
+                  {{data.nameTask}}
+                </p>
+                <p class="nameofHead">History</p>
+                <p *ngFor="let data1 of data.timearrary">Started timer at {{currentdate | date:'dd/MM/yyyy' }} {{data1.starttime}} <span *ngIf="data1.endtime==0">(Active)</span> <span *ngIf="data1.endtime!=0">and stopped at {{currentdate | date:'dd/MM/yyyy' }} {{data1.endtime}} </span></p>
+                <div>
+                    <!-- <h2>Stopwatch</h2>
+                    <button (click)="startStopwatch(i,formatTime(i))">
+                      {{ mainObject[i].running ? 'Pause' : 'Start' }}
+                    </button>
+                    <button (click)="resetStopwatch(i)">Reset</button> -->
+                  </div>
+
+              
+
+
+                <p *ngIf="data.startButton">No History Found, Click on the start button to track the timer</p>
+            </div>
+
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-1">
+                        <img src="../../../assets/img/Rectangle 4.svg" class="sap">
+
+                    </div>
+
+                    <!-- <div class="col-5">
+<p style="font-size: 20px;">{{display}}</p>
+
+                    </div> -->
+                    <div class="col-5">
+                        <p class="fonttimer">{{ formatTime(i) }}</p>
+
+                    </div>
+
+                    <div class="col-4">
+
+                        <button [ngClass]="mainObject[i].running ? 'pausebutton' : 'startButton' " (click)="startStopwatch(i,formatTime(i))">
+                            {{ mainObject[i].running ? 'Pause' : 'Start' }}
+
+                        </button>
+
+                        <!-- <button class="endButton" *ngIf="!data.startButton">
+                            Stop
+                        </button>
+
+                        <button class="startButton" *ngIf="!data.startButton">
+                            End
+                        </button> -->
+                    </div>
+                    <div class="col-2 remove">
+                        <img src="../../../assets/img/delete Button.svg" (click)="deleteitem(i)">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+<br>
+
+</div>
+
+
+<div id="mybutton">
+    <button class="feedback" (click)="openDialog()">+</button>
+</div>
+
+
+
+
